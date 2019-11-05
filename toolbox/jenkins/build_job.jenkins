@@ -16,11 +16,11 @@ pipeline  {
             steps {
                 echo 'Creating docker image ...'
                 dir('.'){
-                    sh "docker build -t macnaer/students-book . "
+                    sh "docker build -t bezDelnikV/students-book . "
                 }
             }
         }
-        stage("docker login") {
+       /*  stage("docker login") {
             steps {
                 echo " ============== docker login =================="
                 withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -45,6 +45,6 @@ pipeline  {
                 ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
                 '''
             }
-        }
+        } */
     }
 }
